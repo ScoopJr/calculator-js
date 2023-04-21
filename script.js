@@ -13,7 +13,7 @@ const numberButtons = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operators");
 
 // listen for number buttons
-numberButtons.forEach((button) => {
+numberButtons.forEach((button) => { 
   button.addEventListener("click", (event) => {
     handleNumber(event.target.textContent);
   });
@@ -26,13 +26,14 @@ function handleNumber(number) {
   }
 }
 
-// listen for operator buttons
-operators.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+// listen for operator buttons -----------------------------TO FIX-------------------------------
+operators.forEach((button) => {
+  button.addEventListener("click", (e) => {
     handleOperator(e.target.textContent);
   });
 });
 
+// function to manage operators -----------------------------TO REVIEW-------------------------------
 function handleOperator(op) {
   operator = op;
   previousNum = currentNum;
@@ -40,6 +41,26 @@ function handleOperator(op) {
   currentNum = "";
   currentDisplayNumber.textContent = "";
 }
+
+// function to manage "=" -----------------------------TO REVIEW-------------------------------
+function handleEquals() {
+  previousNum = Number(previousNum);
+  currentNum = Number(currentNum);
+
+  if (operator === "+") {
+    previousNum = previousNum + currentNum;
+  } else if (operator === "-") {
+    previousNum = previousNum - currentNum;
+  } else if (operator === "x") {
+    previousNum = previousNum * currentNum;
+  } else if (operator === "/") {
+    previousNum = previousNum / currentNum;
+  }
+  previousDisplayNumber.textContent = "";
+  currentDisplayNumber.textContent = previousNum;
+}
+
+
 
 // listen for keyboard numbers
 document.addEventListener("keydown", (e) => {
