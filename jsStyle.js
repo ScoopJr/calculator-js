@@ -2,16 +2,15 @@
 
 // body class
 const bodyClass = 
-    //"bg-purple-800 bg-gradient-to-br from-blue-300 bg-opacity-25";
-    "bg-blue-800 bg-gradient-to-br from-gray-300 bg-opacity-25";
+    "bg-purple-800 bg-gradient-to-br from-blue-300 bg-opacity-25";
+
 const body = document.querySelector("body");
 bodyClass.split(" ").forEach((cls) => body.classList.add(cls)); 
     // convert string into an array. creates new element for every space
 
 // calcBody class
 const calcBodyClass = 
-    //"max-w-lg rounded overflow-hidden shadow-2xl bg-pink-700 bg-opacity-75 bg-gradient-to-tr from-gray-800 flex";
-    "max-w-lg rounded overflow-hidden shadow-2xl bg-blue-700 bg-opacity-75 bg-gradient-to-tr from-gray-800 flex";
+    "max-w-lg rounded overflow-hidden shadow-2xl bg-pink-700 bg-opacity-75 bg-gradient-to-tr from-gray-800 flex";
 const calcBody = document.querySelector(".calcBody");
 calcBodyClass.split(" ").forEach((cls) => calcBody.classList.add(cls)); 
 
@@ -41,11 +40,11 @@ buttons.forEach((btn) => {
 
 // specific button types
 function addClasses(button) {
-const btnNumberClass = "hover:bg-blue-500 border-blue-500"; //"hover:bg-green-500 border-green-500";
-const btnOperatorClass = "hover:bg-red-500 border-red-500"; //"hover:bg-blue-500 border-blue-500";
-const btnClearClass = "hover:bg-black-500 border-black-500"; //"hover:bg-orange-500 border-orange-500";
-const btnDecimalClass = "hover:bg-red-500 border-red-500"; //"hover:bg-red-500 border-red-500";
-const btnEqualsClass = "hover:bg-green-500 border-green-500"; //"hover:bg-yellow-500 border-yellow-500";
+const btnNumberClass = "hover:bg-green-500 border-green-500";
+const btnOperatorClass = "hover:bg-blue-500 border-blue-500";
+const btnClearClass = "hover:bg-orange-500 border-orange-500";
+const btnDecimalClass = "hover:bg-red-500 border-red-500";
+const btnEqualsClass = "hover:bg-yellow-500 border-yellow-500";
 
 if (button.classList.value === "number") {
     btnNumberClass.split(" ").forEach((cls) => button.classList.add(cls));
